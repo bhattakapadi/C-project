@@ -3,6 +3,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #define ROWS 3
 #define COlOUM 3
@@ -37,7 +38,7 @@ int main()
 	if(buff == 'W')printf("Winner is %c Player ",puff);
 
 	
-	return 0;
+	return EXIT_SUCCESS;
 }
 
 
