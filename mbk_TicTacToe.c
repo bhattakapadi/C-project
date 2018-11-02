@@ -5,6 +5,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+#ifdef __unix__
+    #define clrscr() printf("\x1B[2J")
+#elif __BORLANDC__ && __MSDOS__
+    #include <conio.h>
+#elif __WIN32__ || _MSC_VER
+    #define clrscr() system("cls")
+#else
+    #define clrscr() printf("clrscr() - Fehler!!\n")
+#endif
+
+
 #define ROWS 3
 #define COlOUM 3
 #define  WIN 'W'
@@ -91,7 +103,7 @@ char nextPlayer(char player10)
 	if(box[num1-1][num2-1] == 'X' || box[num1-1][num2-1] == 'O') goto man;	// Checking weather the Place have already data
 
 	box[num1-1][num2-1] = player10;  // Assigning the value to the Array
-	printf("\n\n\n");
+	clrscr();
 	gameBox();
 	if(checkWin(player10) == WIN) return WIN;
 	 
