@@ -44,14 +44,14 @@ int main()
 
 void gameBox()
 {
-	
+	printf("%20s"," "); printf("  1      2     3   \n");
 	for (int i = 0; i <= 3; ++i)
 	{
 	
 		 printf("%20s"," ");printf("*-----*-----*-----*\n");
 		 if( i< 3)
 		 {
-		 	printf("%20s"," "); printf("| "); 
+		 	printf("%19s"," "); printf("%d| ",i+1);  
 			for (int j = 0; j < 3; ++j)
 			{
 				
