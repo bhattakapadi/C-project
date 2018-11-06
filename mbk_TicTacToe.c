@@ -115,12 +115,13 @@ char nextPlayer(char player10)
  unsigned char  checkWin(char player)
 {	
 	if(box[0][0] == player && box[0][1] == player && box[0][2] == player || 
-	   box[1][0] == player && box[1][1] == player && box[1][2] == player || 
+	   box[1][0] == player && box[1][1] == player && box[1][2] == player ||
+	   box[2][0] == player && box[2][1] == player && box[2][2] == player ||
 	   box[0][0] == player && box[1][0] == player && box[2][0] == player ||
 	   box[0][1] == player && box[1][1] == player && box[2][1] == player ||  
 	   box[0][2] == player && box[1][2] == player && box[2][2] == player || 
 	   box[0][0] == player && box[1][1] == player && box[2][2] == player ||  
-	   box[2][0] == player && box[2][1] == player && box[2][2] == player )
+	   box[0][2] == player && box[2][2] == player && box[0][2] == player )
 	{
 		return WIN;
 	}
