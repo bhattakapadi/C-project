@@ -18,10 +18,11 @@ int main(void){
    // negative value for left-shift
    //positive value for right-shift
    char str[MAX]; int num;
+   printf("\nPlease enter the String: ");
    fgets(str,MAX,stdin);
    printf("Shift: ");
    do{scanf("%d",&num);}while(getchar() != '\n');
-   printf("%s",encode(str,x));
+   printf("%s",encode(str,num));
 
    return EXIT_SUCCESS;
 }
