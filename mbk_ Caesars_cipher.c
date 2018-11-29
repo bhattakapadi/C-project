@@ -6,72 +6,45 @@
 #include <stdlib.h>
 #define MAX 30
 
-
-// This function can decode as well as encode 
-char *encode (char *, int);
-
-
+char *encode (char *, int); // This function can decode as Well as Encode 
 
 int main(void){
    // Str takes the String
    //num takes the number of shift.
-   // negative value for left-shift
-   //positive value for right-shift
    char str[MAX]; int num;
-   printf("\nPlease enter the String: ");
+   printf("\nEnter the String: ");
    fgets(str,MAX,stdin);
-   printf("Shift: ");
+   printf("Shift(negative = towards Left  \t positive : towards right ): ");
    do{scanf("%d",&num);}while(getchar() != '\n');
    printf("%s",encode(str,num));
-
-   return EXIT_SUCCESS;
+   return 0;
 }
-
 
 char *encode (char *str, int shift){
    char * c;
    int diff;
-   // 1-26 is a  1 alphabet cycle 
-   //so this function converts the given shift > 26  in shift within in shift <= 26 
-    while(shift >= 26 || shift <= -26){ 
-         if(shift >= 26){
-            shift = shift -26; 
-         }else{
-            shift = shift +26; 
-         }
-      }
+   shift=shift%26; // 1-26 is a  1 alphabet cycle so this function converts the given shift in sift within in 26     
 
-   for (c = str; *c != '\0'; ++c)
-   {
-      if((*c >= 'A' && *c <= 'Z' ) || (*c >= 'a' && *c <= 'z' ) )// Takes only String 
-      {
-            diff = *c + shift;   // add or Subtract  with current ascii value of the Character.
-         if( *c >= 'a')
-         {
-
-            if(diff < 97 ){  //diff < 'a'
-                  *c = 122 -(97- (diff+1));  // subraction the negative shift starting from  Z
+   for (c = str; *c != '\0'; ++c) {
+         diff = *c + shift;
+         if(*c >= 'a' && *c <= 'z'){
+            if(diff < 'a' ){
+                  *c = 'z' -(96- diff);
             }else if( diff > 122){
-               *c = 97 +((diff-1) -122);    // add the positive shift stating from  a
+               *c = 'a' +((diff- 123);
             }else{
-               *c = diff;         // add the normal shift to the Alphabet 
+               *c = diff;
             }
-
-         }
-         else
-         {
-
-            if(diff < 65  ){   // diff < ' '
-                  *c = 90 -(65- (diff+1)) ;  // subraction the negative shift starting from  z
+         }else if (*c >= 'A' && *c <= 'Z'){
+            if(diff <'A' ){
+                  *c = 'Z' -(64-diff) ;
              }else if( diff > 90){
-               *c = 65 +((diff-1) -90);  // add the positive shift stating from  a
+               *c = 65 +((diff-91);  
             }else{
-               *c = diff;    // add the normal shift to the Alphabet 
+               *c = diff;
                
             }
          }
       }
-      
-   }
    return str;
 }
