@@ -1,2 +1,2 @@
 # C-project
-C programming
+C programming basics
