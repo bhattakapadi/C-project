@@ -23,7 +23,7 @@ int push(stack **,int);                               // push the Element int th
 bool containsElement(stack *,int );                  // for checking is the element is present
 stack * allocateMemory(int );                        // allocate memory for the the stack
 void printElement(stack *);                          // print the element in the Array
-int pop(stack **); 									// delete the element at he top of the Stack
+int pop(stack **); 				// delete the element at he top of the Stack
 
 
 
