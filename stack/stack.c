@@ -50,8 +50,8 @@ int main(int args, char *argv[]){
 
 
 /* 
-*	@stk: takes the address of the Stack present in the Main function
-	@number: takes the number that is to be pushed in the Stack
+*	@param stk: takes the address of the Stack present in the Main function
+	@pararm number: takes the number that is to be pushed in the Stack
 	@returns  : if pushed return the Number that is pushed  else gives -1 back
 */
 
@@ -81,7 +81,7 @@ int push(stack ** stk,int number){
 
 
 /*allocate memory for the Next Element!!
- *@number:  takes the Number that is to be stored
+ *@nparam umber:  takes the Number that is to be stored
  * @returns : returns the Pointer to the newly created array
  */
 stack  * allocateMemory(int number){
@@ -98,7 +98,7 @@ stack  * allocateMemory(int number){
 
 
 /*
-  *@stk : takes the address fo the head
+  *@param stk : takes the address fo the head
   *@ returns : gives true if the Element is already present in the Array else returs false
   */
 
@@ -120,7 +120,7 @@ bool containsElement(stack *stk, int number){
 
 
 /*
- *@stk : points to the Head
+ *@param stk : points to the Head
 */
 
 void printElement(stack * stk1){
@@ -135,7 +135,7 @@ void printElement(stack * stk1){
 }
 
 /*
-*@stk: access to the Head
+*@param stk: access to the Head
 *@returns: returns the number that is poped if present else gives -1 back
 */
 
