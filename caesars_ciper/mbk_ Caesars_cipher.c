@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #define MAX 30
 
-char *encode (char *, int); // This function can decode as Well as Encode 
+char *encode (char *, int); // This function can decode as well as encode 
 
 int main(void){
    // Str takes the String
@@ -23,7 +23,7 @@ int main(void){
 char *encode (char *str, int shift){
    char * c;
    int diff;
-   shift=shift%26; // 1-26 is a  1 alphabet cycle so this function converts the given shift in sift within in 26     
+   shift=shift%26; // 1-26 is a  1 alphabet cycle so this function converts the given shift in shift within in 26     
 
    for (c = str; *c != '\0'; ++c) {
          diff = *c + shift;
