@@ -1,3 +1,3 @@
 # C-project
-C programming basic pojects
+C programming basic codes
 
