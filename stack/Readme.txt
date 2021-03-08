@@ -1,4 +1,6 @@
-This is a  Dynamic Stack.
-This Stack doesnot accept any Number that is already present in the Stack.
-This can be solved by removing ContainElement function from the Code.
+This is a  dynamic stack.
+
+1) This stack doesnot accept any number that are already present in the stack.
+
+If (1) is  not needed, then it can be solved.( by removing ContainElement function from the Code.)
 
